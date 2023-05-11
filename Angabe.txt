@@ -1,0 +1,36 @@
+Kunde
+-------
+Id
+Titel
+Vorname
+Nachname
+
+Termin
+------
+Id
+Titel
+Startdatum
+Enddatum
+Kunde_Id
+
+Ziel:
+------
+Speichern Sie einige Kunden (mindestens 5 Kunden) über eine Weboberfläche (kunde.php) entsprechend in einer Datenbank ab!
+Es soll eine Kundenübersichtsseite geben und es soll auch möglich sein die Kunden zu bearbeiten und zu löschen!
+
+Anschließend legen Sie enstprechende Termine für die einzelnen Kunden in der Datenbank an. Ein Termin darf nur gespeichert werden wenn es 
+zu einem bestimmten Kunden keine Terminüberschneidung gibt!
+Auch für die Termine soll es eine entsprechende Übersichtsseite geben!
+
+
+Titel: _______
+
+Start: _______
+
+Ende:  _______
+
+Kunde: Auswahl über DrowDown-Box
+
+
+
+
