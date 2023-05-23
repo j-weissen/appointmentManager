@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from "@/views/HomeView.vue";
+import HomeView from '@/views/HomeView.vue';
 
 import ShowCustomersView from "@/views/ShowCustomersView.vue";
 import UpdateCustomerView from "@/views/UpdateCustomerView.vue";
@@ -19,11 +19,38 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+
     {
       path: '/customers',
       name: 'customers',
       component: ShowCustomersView
-    }
+    },
+    {
+      path: '/customers/add',
+      name: 'customers_add',
+      component: AddCustomerView,
+    },
+    {
+      path: '/customers/:id',
+      name: 'customers_update',
+      component: UpdateCustomerView,
+    },
+
+    {
+      path: '/appointments',
+      name: 'appointments',
+      component: ShowAppointmentsView,
+    },
+    {
+      path: '/appointments/add',
+      name: 'appointments_add',
+      component: AddAppointmentView,
+    },
+    {
+      path: '/appointments/:id',
+      name: 'appointments_update',
+      component: UpdateAppointmentView,
+    },
   ]
 })
 

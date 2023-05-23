@@ -23,7 +23,7 @@ migrate((db) => {
       {
         "system": false,
         "id": "sfkzhhm2",
-        "name": "first_name",
+        "name": "firstName",
         "type": "text",
         "required": true,
         "unique": false,
@@ -36,7 +36,7 @@ migrate((db) => {
       {
         "system": false,
         "id": "ow3cdhcm",
-        "name": "last_name",
+        "name": "lastName",
         "type": "text",
         "required": true,
         "unique": false,

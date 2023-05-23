@@ -1,10 +1,7 @@
-import {Customer} from '@/models/customer.ts';
-
-
 export interface Appointment {
-  id: number;
+  id?: string;
   title: string;
-  start: Date;
-  end: Date;
-  customer: Customer;
+  start: Date | string;
+  end: Date | string;
+  customer: string;
 }  

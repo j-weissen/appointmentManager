@@ -1,7 +1,9 @@
 <template>
   <div class="component">
-   <HeaderBar />
-   <router-view></router-view>
+    <HeaderBar />
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -10,5 +12,8 @@ import HeaderBar from '@/components/HeaderBar.vue';
 </script>
 
 <style scoped>
-
+.content {
+  display: flex;
+  justify-content: center;
+}
 </style>

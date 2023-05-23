@@ -5,5 +5,5 @@ export interface Card {
 
 interface CardProperty {
   key: string;
-  value: strign;
+  value: string;
 }

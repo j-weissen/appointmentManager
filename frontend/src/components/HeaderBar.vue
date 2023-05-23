@@ -5,7 +5,7 @@
     </div>
     <div class="right">
       <router-link to="/appointments">Show Appointments</router-link>
-      <router-link to="/appointments/add">New Appointments</router-link>
+      <router-link to="/appointments/add">New Appointment</router-link>
       <router-link to="/customers">Show Customers</router-link>
       <router-link to="/customers/add">New Customer</router-link>
     </div>

@@ -7,15 +7,37 @@
   --gruv-green-pastel: #8EC07C;
   --gruv-red: #FB4934;
   --gruv-yellow: #FABD2F;
+
+
 }
 
 * {
   color: var(--gruv-beige);
   font-family: 'Consolas', cursive;
+  font-size: 20pt;
 }
 
 body {
-  background-color:  var(--gruv-grey-light);
+  background-color: var(--gruv-grey-light);
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: var(--gruv-red);
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--gruv-yellow);
+}
+
+h3 {
+  font-size: 1.5em;
+  color: var(--gruv-green);
+}
+
+.view {
+  padding: 1em;
 }
