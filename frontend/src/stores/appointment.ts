@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ref, type Ref } from "vue";
 import { type Appointment } from "@/models/appointment";
 import {usePocketbaseStore} from "@/stores/pocketbase";
+import {Error} from '@/assets/errors'
 
 
 export const useAppointmentStore = defineStore('appointments', () => {
@@ -16,16 +17,16 @@ export const useAppointmentStore = defineStore('appointments', () => {
     });
   }
 
-  async function validateAppointment(appointment: Appointment): Promise<boolean> {
+  async function validateAppointment(appointment: Appointment): Promise<string | boolean> {
     const {title, start, end, customer} = appointment;
 
     const fieldsSet = title && start && end && customer;
     if (!fieldsSet) {
-      return false;
+      return Error.NOT_ALL_FIELDS_SPECIFIED;
     }
 
     if (end <= start) {
-      return false;
+      return Error.DATE_ORDER_WRONG;
     }
 
     const overlappingAppointments = await pb.collection(COLLECTION_NAME).getFullList<Appointment>({
@@ -35,7 +36,10 @@ export const useAppointmentStore = defineStore('appointments', () => {
     });
 
     // no overlapping appointments exist for this user => valid true
-    return overlappingAppointments.length === 0;
+    if (overlappingAppointments.length !== 0) {
+      return Error.APPOINTMENT_COLLISION;
+    }
+    return true;
 
   }
 

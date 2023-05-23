@@ -13,6 +13,7 @@
       </option>
     </select> <br />
     <button @click="addAppointment(appointment)">Add</button><br />
+    <p v-if="showError" class="error">{{ error }}</p>
   </div>
 </template>
 
@@ -33,13 +34,18 @@ const cleanAppointment: Appointment = {
 };
 
 const appointment: Ref<Appointment> = ref(structuredClone(cleanAppointment));
+const showError = ref(false)
+const error = ref("");
 
 onMounted(() => {
   customerStore.fetchAll();
 })
 
 async function addAppointment(appointment: Appointment) {
-  if (!await appointmentStore.validateAppointment(appointment)) {
+  const success = await appointmentStore.validateAppointment(appointment);
+  if (typeof success === "string") {
+    showError.value = true
+    error.value = success
     return
   }
   const created = await appointmentStore.add(appointment);
@@ -69,5 +75,9 @@ input, select, button {
 
 select {
   background-color: var(--gruv-grey-dark);
+}
+
+.error {
+  color: var(--gruv-red);
 }
 </style>
